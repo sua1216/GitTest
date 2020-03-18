@@ -3,52 +3,16 @@
 <head>
     <title>My first three.js app</title>
     <style>
-        body { margin: 0; }
-        canvas { width: 100%; height: 100% }
+
     </style>
 </head>
 <body>
-<script src="https://threejs.org/build/three.js"></script>
+随便写点东西
 <script>
 
 
 
-    var scene = new THREE.Scene();//1、创建场景
-    var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );//2、创建相机（此处使用PerspectiveCamera相机）
 
-    var renderer = new THREE.WebGLRenderer();//3、渲染器（此处使用WebGLRenderer渲染器，另外提供的几种可用于适配 低版本/不支持webgl浏览器）
-
-    renderer.setSize( window.innerWidth, window.innerHeight );//4、设置渲染器尺寸，一般设成需要渲染的窗口的宽高）
-    document.body.appendChild( renderer.domElement );//5、然后将渲染器渲染的dom元素添加进html文档   即显示视图的canvas元素
-
-
-
-    //添加立方体
-
-    var geometry = new THREE.BoxGeometry( 1, 1, 1 );//1、需要一个立方体对象（包含立方体所有的点和面）
-    var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );//2、需要材质（设置颜色等）
-    var cube = new THREE.Mesh( geometry, material );//3、需要一个网格（包含以上的立方体和材质）
-    scene.add( cube ); //4、添加进场景
-
-    camera.position.z = 5;//5、移动摄像机（避免默认情况下物体添加到（0，0，0）坐标时摄像机和立方体彼此在一起的情况）
-
-
-    //真正的渲染
-
-    var animate = function () {
-
-        //渲染出立方体
-        requestAnimationFrame( animate );//使用requestAnimationFrame函数创建动画循环
-                                          //优点：当用户切换到其它的标签页时，会暂停，因此不会浪费用户的处理器资源，也不会损耗电池的使用寿命。
-
-        //使立方体动起来
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
-
-        renderer.render( scene, camera );//调用渲染器
-    };
-
-    animate();//靠记得执行函数
 
     
 </script>
